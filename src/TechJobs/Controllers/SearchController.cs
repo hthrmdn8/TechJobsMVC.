@@ -19,6 +19,11 @@ namespace TechJobs.Controllers
         {
             ViewBag.columns = ListController.columnChoices;
             ViewBag.title = "Search";
+            if (searchTerm == null)
+            {
+                searchTerm = "";
+            }
+
             if (searchType.Equals("all"))
             {
                 ViewBag.jobs = JobData.FindByValue(searchTerm);
